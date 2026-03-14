@@ -25,7 +25,8 @@ if (process.env.NODE_ENV !== "test") {
 
 app.use(json({ limit: "50mb" }));
 app.use(urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "", "public")));
+// app.use(express.static(path.join(__dirname, "", "public")));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(invoiceRouter);
 // app.get("/", (req, res) => {
 // 	res.sendFile(path.join(__dirname, "", "public"));
