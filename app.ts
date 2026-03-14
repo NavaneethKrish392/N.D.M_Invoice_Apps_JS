@@ -4,15 +4,21 @@ import mongoose from "mongoose";
 import { invoiceRouter } from "./routers/router";
 import cors from "cors";
 import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
 mongoose.Promise = global.Promise;
 
+// Use MONGO_URI from environment (Atlas). Falls back to local DB for development.
+const mongoUri = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/ndm_invoices";
+
 if (process.env.NODE_ENV !== "test") {
 	mongoose
-		.connect("mongodb://localhost:27017/ndmInvoiceDB")
-		.then(() => console.log("MongoDB connected"))
+		.connect(mongoUri)
+		.then(() => console.log("MongoDB connected Successfully"))
 		.catch((err) => console.error("MongoDB connection error:", err));
 }
 
