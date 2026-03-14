@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title>Home - N.D.M Aluminium Fabricators</title>
+
+	<link rel="icon" type="image/jpg" href="./Logo/N.D.M_Logo_final.png" />
+	<link href="./css/datatables.min.css" rel="stylesheet" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+
+	<link href="./css/styles.css" rel="stylesheet">
+
+	<!-- jQuery -->
+	<script src='js/jquery-3.6.0.min.js'></script>
+
+	<!-- DataTables -->
+	<script src="./js/datatables.min.js" crossorigin="anonymous"></script>
+
+	<!-- Buttons extension -->
+	<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+
+	<!-- JSZip for Excel export -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+	<script src='js/3.4.16'></script>
+
+	<script src="js/script.js" defer></script>
+</head>
+
+<body class='bg-white-100 p-6'>
+
+	<nav class="bg-white shadow-md no-print">
+		<div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-0">
+			<div class="flex justify-between h-16">
+				<div class="flex navbarClass">
+					<div class="flex-shrink-0 flex items-center text-xl font-bold logoNameclass" onclick="logoClick()">
+						<img src='Logo/N.D.M_Logo_final.png' alt='NDM Logo' class='header-logo'>
+						N.D.M
+					</div>
+					<div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+						<a href="index.html"
+							class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium onhover">Home</a>
+						<a href="search.html"
+							class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium onhover">Search</a>
+						<a href="contact.html"
+							class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium onhover active">Contact</a>
+					</div>
+				</div>
+
+				<div class="flex items-center sm:hidden">
+					<button id="menu-toggle"
+						class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+						<svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M4 6h16M4 12h16M4 18h16" />
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mobile Menu -->
+		<div id="mobile-menu" class="hidden sm:hidden">
+			<div class="px-2 pt-2 pb-3 space-y-1">
+				<a href="index.html"
+					class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 onhover">Home</a>
+				<a href="search.html"
+					class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 onhover">Search</a>
+				<a href="contact.html"
+					class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 onhover active">Contact</a>
+			</div>
+		</div>
+	</nav>
+
+</body>
+
+</html>

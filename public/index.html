@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Home - N.D.M Aluminium Fabricators</title>
+
+    <link rel="icon" type="image/jpg" href="./Logo/N.D.M_Logo_final.png" />
+    <link href="./css/datatables.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+
+    <link href="./css/styles.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src='js/jquery-3.6.0.min.js'></script>
+
+    <!-- DataTables -->
+    <script src="./js/datatables.min.js" crossorigin="anonymous"></script>
+
+    <!-- Buttons extension -->
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+
+    <!-- JSZip for Excel export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src='js/3.4.16'></script>
+
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class='bg-white-100 p-6'>
+
+    <nav class="bg-white shadow-md no-print">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-0">
+            <div class="flex justify-between h-16">
+                <div class="flex navbarClass">
+                    <div class="flex-shrink-0 flex items-center text-xl font-bold logoNameclass" onclick="logoClick()">
+                        <img src='Logo/N.D.M_Logo_final.png' alt='NDM Logo' class='header-logo'>
+                        N.D.M
+                    </div>
+                    <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="index.html"
+                            class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium onhover active">Home</a>
+                        <a href="search.html"
+                            class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium onhover">Search</a>
+                        <a href="contact.html"
+                            class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium onhover">Contact</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center sm:hidden">
+                    <button id="menu-toggle"
+                        class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden sm:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 onhover active">Home</a>
+                <a href="search.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 onhover">Search</a>
+                <a href="contact.html"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-600 onhover">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class='p-6 header-details' id="headerContainer">
+        <div class='text-end font-semibold text-sm contact'>
+            <div>Cell: 9843693155</div>
+            <div>Mohan: 8489383402</div>
+        </div>
+        <div class='flex items-center space-x-4 contract-details'>
+            <img src='Logo/N.D.M_Logo_final.png' alt='NDM Logo' class='logo'>
+            <h1 class='font-bold uppercase contract-first-name'>
+                N.D.M <span class='contract-last-name'>Aluminium Fabricators</span>
+            </h1>
+        </div>
+        <div class='address'>
+            <p class='text-center mt-2 font-semibold'>
+                No.102, Karuneegar Street, Uthiramerur - 603406, Kanchipuram Dist.
+            </p>
+            <p class='text-center font-semibold'>kannansubrayan@gmail.com</p>
+        </div>
+        <p class='font-semibold contract-owner'>
+            Prop: <span class='contract-owner-name'>S.KANNAN</span>
+        </p>
+        <p class='contract-id-details'>
+            <span class='contract-id-details-span'>GSTIN:</span> 33AUZPK8352Q2ZH,
+            <span class='contract-id-details-span'>PAN No:</span> AUZPK8352Q,
+            <span class='contract-id-details-span'>PF No:</span> TBVLR1498214000,
+            <span class='contract-id-details-span'>ESI No:</span> 510011168310000999
+        </p>
+        <hr class='mt-4 divider no-mt-b'>
+        <p class='contract-work-details text-center'>
+            We also specialize in all types of Carpentry Works, False Ceiling, Thermocol False Ceiling,
+            Gypsum Board False Ceiling, SS Polishing, Machine Buffing, Painting, Varnish Works, and
+            all types of Doors and Windows Partition Works.
+        </p>
+        <hr class='mb-4 divider no-mb-b'>
+    </div>
+
+    <div class='invoice-details-container' id="invoiceContainer">
+        <h2 class='text-1xl font-semibold text-center tax-header'>Tax Invoice</h2>
+        <div class='p-4'>
+            <div class='flex justify-between'>
+                <div class='text-sm'>
+                    <p><strong>To</strong></p>
+                    <p>M/s. Sun Pharmaceutical Industries Ltd.</p>
+                    <p>Sathamai village, Karunguzhi post</p>
+                    <p>Madhuranthakam Taluk, Kancheepuram Dist,</p>
+                    <p>Tamil Nadu - 603 303</p>
+                    <p><strong>GSTIN :</strong> 33AADCS3124K1ZK</p>
+                </div>
+                <div class='text-sm text-right'>
+                    <p>
+                        <strong>INVOICE NO:</strong>
+                        <input type='text' class='bill-no no-print' id='bill-no' onblur='billNumChange()'
+                            onkeyup='billNumChange()' autocomplete="off" />
+                        <span id='formattedInvoiceNumber' class='no-show'></span> / <span id='financialYear'></span>
+                    </p>
+                    <p>
+                        <strong>DATE:</strong>
+                        <input type='date' id='bill-date' class='bill-date no-print' onchange='changeDate()'
+                            autocomplete="off" />
+                        <span id='formattedDate' class='no-show'></span>
+                    </p>
+                    <p><strong>VENDOR CODE:</strong> 0010013228</p>
+                    <p id="billPoNumberParent" class="no-print"><strong>PO NO:</strong> <input type='text'
+                            class='bill-po-no no-print' id='bill-po-no' onblur='poNumChange()' onkeyup='poNumChange()'
+                            autocomplete="off" /><span id='formattedPoNumber' class='no-show'></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="no-print">
+            <div class="flex">
+                <div class="p-4 flex-1">
+                    <select id="invoiceOwner"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </select>
+                </div>
+                <!-- <div class="p-4 flex-1 flex">
+                    <label class="inline-flex items-center space-x-2">
+                        <input type="checkbox" value="true" checked disabled id='isGIWork'
+                            class="h-4 w-4 text-green-600 border-gray-300 rounded">
+                        <span class="text-sm text-gray-700">GI Sheet Work</span>
+                    </label>
+                </div> -->
+            </div>
+        </div>
+        <div contenteditable='true' class='w-full border work-title' id='work-title' onblur="onWorkTitleBlur()"></div>
+        <div class='overflow-auto' id="table1">
+            <table class='w-full border border-gray-300 rounded-lg shadow-sm' id="invoice-table">
+                <thead class='bg-gray-200'>
+                    <tr class="text-sm">
+                        <th class='p-1 border'>Sl.No</th>
+                        <th class='p-1 border no-print'>Is Header</th>
+                        <th class='p-1 border'>Description</th>
+                        <th class='p-1 border sacTh'>SAC/HSN</th>
+                        <th class='p-1 border unitTh'>Unit</th>
+                        <th class='p-1 border'>Qty</th>
+                        <th class='p-1 border'>Rate</th>
+                        <th class='p-1 border'>Amount</th>
+                        <th class='p-1 border no-print'>Action</th>
+                    </tr>
+                </thead>
+                <tbody id='invoiceBody'>
+                </tbody>
+                <tfoot class='bg-gray-100 text-sm'>
+                    <tr>
+                        <td class='p-1 border no-print'></td>
+                        <td colspan='6' class='p-1 border text-right font-semibold'>Total</td>
+                        <td colspan='1' class='p-1 border text-right' id='totalAmount'>0.00</td>
+                    </tr>
+                    <tr>
+                        <td class='p-1 border no-print'></td>
+                        <td colspan='6' class='p-1 border text-right'>CGST 9%</td>
+                        <td colspan='1' class='p-1 border text-right' id='cgstAmount'>0.00</td>
+                    </tr>
+                    <tr>
+                        <td class='p-1 border no-print'></td>
+                        <td colspan='6' class='p-1 border text-right'>SGST 9%</td>
+                        <td colspan='1' class='p-1 border text-right' id='sgstAmount'>0.00</td>
+                    </tr>
+                    <tr class='font-semibold bg-gray-200'>
+                        <td class='p-1 border no-print'></td>
+                        <td colspan='6' class='p-1 border text-right'>Grand Total</td>
+                        <td colspan='1' class='p-1 border text-right' id='grandTotal'>0.00</td>
+                    </tr>
+                    <tr class='font-semibold'>
+                        <td colspan='8' class='p-1 border text-left'>AMOUNT IN WORDS:</td>
+                    </tr>
+                    <tr class=''>
+                        <td colspan='8' class='p-1 border text-left' id='amountInWords'></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class='signature-div font-semibold'>
+            <div class='signature-contractName'>
+                For NDM Aluminium Fabricators
+            </div>
+            <div class='signature-auth'>
+                Authorized Signature
+            </div>
+        </div>
+        <div class="flex justify-center mt-4 gap-4">
+            <ul id="error"></ul>
+        </div>
+    </div>
+
+    <div class='jcc_container' id="jccContainer">
+        <table class="jcc_table">
+            <tr>
+                <td colspan="4" class="jcc_textcenterbold jcc_cmp_name">SUN PHARMACEUTICAL INDUSTRIES LIMITED</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="jcc_textcenterbold">Plant Location - Madhurantakam</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="jcc_date"><b>Job Completion Date:</b> <span id="jccFormattedDate"
+                        class="text-sm"></span></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td colspan="4" class="jcc_textcenterbold">JOB COMPLETION CERTIFICATE</td>
+            </tr>
+            <tr rowspan="1"></tr>
+            <tr>
+                <th>Vendor Name</th>
+                <td class="text-sm">N.D.M ALUMINIUM FABRICATORS</td>
+                <th>Vendor Code</th>
+                <td class="text-sm">0010013228</td>
+            </tr>
+            <tr>
+                <th>Name of the Work</th>
+                <td colspan="3" class="text-sm jcc_now">
+                    <span id='jcc-work-title'></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Nature of Job</th>
+                <td class="text-sm">CIVIL WORK</td>
+                <th>Invoice No.</th>
+                <td class="text-sm"><span id='jcc-invoice-no'></span></td>
+            </tr>
+            <tr>
+                <th>Job Location</th>
+                <td class="text-sm jcc_now">
+                    <span id='jcc-building-location'></span>
+                </td>
+                <th>Invoice Date</th>
+                <td class="text-sm"><span id="jccInvoiceFormattedDate"></span></td>
+            </tr>
+            <tr>
+                <th>Service PO No.</th>
+                <td></td>
+                <th>Invoice Amount</th>
+                <td class="text-sm">Rs. <span id="jcc-invoice-amount"></span></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td colspan="4" class="jcc_textcenterbold">Site Engineer</td>
+            </tr>
+            <tr class="jcc_signature_area"></tr>
+            <tr>
+                <td colspan="4" class="jcc_textcenterbold">(Signature with Name & Date)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="flex justify-center mt-4 gap-4 buttonSection" id="buttonContainer">
+        <button onclick='printDoc()' id='printInvoice'
+            class='bg-green-800 text-white px-4 py-2 rounded-md hover:bg-green-900 no-print'>
+            Save
+        </button>
+
+        <button type="button" onclick='cancelDoc()'
+            class="text-gray-900 bg-white border border-gray-300 px-4 py-2 rounded-md hover:bg-gray-100 no-print"
+            id="cancelDoc">Cancel</button>
+    </div>
+
+    <div class="tableContainerClass" id="tableContainer">
+        <div class="selectionClass">
+            <div class="dropDownSection">
+                <select id="invoiceFinancialYear"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </select>
+            </div>
+            <div id="date-range-picker" date-rangepicker date-rangepicker-autohide class="flex items-center">
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                        </svg>
+                    </div>
+                    <input id="datepicker-range-start" name="start" type="text"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Select start date" autocomplete="off">
+                </div>
+                <span class="mx-4 text-gray-500">to</span>
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                        </svg>
+                    </div>
+                    <input id="datepicker-range-end" name="end" type="text"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Select end date" autocomplete="off">
+                </div>
+            </div>
+            <div class="buttonSection">
+                <button type="button" onclick='searchClick()' id='searchInvoices'
+                    class='bg-green-800 text-white px-4 py-2 rounded-md hover:bg-green-900 no-print'>
+                    Search
+                </button>
+
+                <button type="button" onclick='clearClick()' id="clearInvoices"
+                    class="text-gray-900 bg-white border border-gray-300 px-4 py-2 rounded-md hover:bg-gray-100 no-print">Clear</button>
+
+                <button type="button" onclick='addNewInvoice()' id='addNewInvoice'
+                    class='bg-green-800 text-white px-4 py-2 rounded-md hover:bg-green-900 no-print'>
+                    New Invoice
+                </button>
+            </div>
+        </div>
+
+        <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white bg-opacity-50 z-50 hidden">
+            <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"></div>
+        </div>
+
+        <table id="invoiceListTable"
+            class="display w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr class="myTableHeaderTr">
+                    <th></th>
+                    <th scope="col" class="px-6 py-3 invoiceNo">Invoice No</th>
+                    <th scope="col" class="px-6 py-3 invoiceDate">Invoice Date</th>
+                    <th scope="col" class="px-6 py-3 invoiceOwner">Invoice Owner</th>
+                    <th scope="col" class="px-6 py-3 invoiceTitle">Invoice Title</th>
+                    <th scope="col" class="px-6 py-3 invoiceTotal">Invoice Total</th>
+                    <th scope="col" class="px-6 py-3 invoiceCGST">Invoice CGST</th>
+                    <th scope="col" class="px-6 py-3 invoiceSGST">Invoice SGST</th>
+                    <th scope="col" class="px-6 py-3 invoiceGrandTotal">Invoice Grand Total</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th colspan="5" style="text-align:right">Total</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+
+</html>
